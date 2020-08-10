@@ -12,4 +12,6 @@
 -(BOOL)raise;
 -(BOOL)close;
 
+-(CGWindowID)cgWindowID;
+
 @end
