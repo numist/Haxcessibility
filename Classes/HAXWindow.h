@@ -7,7 +7,7 @@
 
 @interface HAXWindow : HAXView
 
-@property (nonatomic, readonly) NSArray *views;
+@property (nonatomic, readonly) NSArray<HAXView *> *views;
 
 -(BOOL)raise;
 -(BOOL)close;
