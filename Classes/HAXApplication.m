@@ -8,11 +8,11 @@
 
 @implementation HAXApplication
 
-+(instancetype)applicationWithPID:(pid_t)pid {
++(HAXApplication *)applicationWithPID:(pid_t)pid {
 	AXUIElementRef app = AXUIElementCreateApplication(pid);
 	id result = nil;
 	if (app) {
-		result = [self elementWithElementRef:app];
+		result = [[HAXApplication alloc] initWithElementRef:app];
 		CFRelease(app);
 	}
 	return result;
@@ -26,7 +26,7 @@
 	NSArray *axWindowObjects = [self getAttributeValueForKey:(NSString *)kAXWindowsAttribute error:NULL];
 	NSMutableArray *result = [NSMutableArray arrayWithCapacity:[axWindowObjects count]];
 	for (id axObject in axWindowObjects) {
-		[result addObject:[HAXWindow elementWithElementRef:(AXUIElementRef)axObject]];
+		[result addObject:[[HAXWindow alloc] initWithElementRef:(AXUIElementRef)axObject]];
 	}
 	return result;
 }

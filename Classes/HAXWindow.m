@@ -17,7 +17,7 @@ extern AXError _AXUIElementGetWindow(AXUIElementRef, CGWindowID* out);
     for (HAXElement * haxElementI in axChildren) {
         axRole = [haxElementI getAttributeValueForKey:(__bridge NSString *)kAXRoleAttribute error:NULL];
         if ([axRole isEqualToString:@"AXView"]) {
-            HAXView * haxView = [HAXView elementWithElementRef:(AXUIElementRef)haxElementI.elementRef];
+            HAXView * haxView = [[HAXView init] initWithElementRef:(AXUIElementRef)haxElementI.elementRef];
             [result addObject:haxView];
         }
     }

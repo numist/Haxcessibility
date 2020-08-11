@@ -12,6 +12,6 @@
 @property (nonatomic, readonly) NSArray<HAXWindow *> *windows;
 @property (nonatomic, copy, readonly) NSString *localizedName;
 
-+(instancetype)applicationWithPID:(pid_t)pid;
++(HAXApplication *)applicationWithPID:(pid_t)pid;
 
 @end
