@@ -29,6 +29,10 @@
     return cocoaScreenFrameFromCarbonScreenFrame(self.carbonFrame).origin;
 }
 
+-(void)setOrigin:(NSPoint)origin {
+    self.carbonOrigin = carbonScreenPointFromCocoaScreenPoint(origin);
+}
+
 -(NSSize)size {
     CGSize size = {0};
     AXValueRef sizeRef = (AXValueRef)[self copyAttributeValueForKey:(__bridge NSString *)kAXSizeAttribute error:NULL];
@@ -57,6 +61,11 @@
 
 -(NSRect)frame {
     return cocoaScreenFrameFromCarbonScreenFrame(self.carbonFrame);
+}
+
+-(void)setFrame:(NSRect)frame {
+    self.origin = frame.origin;
+    self.size = frame.size;
 }
 
 -(NSString *)title {
