@@ -12,8 +12,8 @@
 @property (nonatomic, assign) NSSize size;
 @property (nonatomic, assign) CGRect carbonFrame;
 @property (nonatomic, assign, readonly) NSRect frame;
-@property (nonatomic, readonly) NSString *title;
-@property (nonatomic, readonly) NSScreen *screen;
+@property (nullable, readonly) NSString *title;
+@property (nullable, readonly) NSScreen *screen;
 @property (nonatomic, readonly, getter=isFullscreen) BOOL fullscreen;
 
 @end
