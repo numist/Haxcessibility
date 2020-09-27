@@ -19,8 +19,6 @@
 @property (nonatomic, nullable, readonly) NSArray<HAXButton *> *buttons;
 @property (nonatomic, readonly) pid_t processIdentifier;
 
--(BOOL)isEqualToElement:(HAXElement *)other;
-
 @end
 
 @protocol HAXElementDelegate <NSObject>

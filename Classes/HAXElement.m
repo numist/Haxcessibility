@@ -32,14 +32,10 @@
 	}
 }
 
--(BOOL)isEqualToElement:(HAXElement *)other {
-	return
-		[other isKindOfClass:self.class]
-	&&	CFEqual(self.elementRef, other.elementRef);
-}
-
 -(BOOL)isEqual:(id)object {
-	return [self isEqualToElement:object];
+	return
+		[object isKindOfClass:self.class]
+	&&	CFEqual(self.elementRef, [object elementRef]);
 }
 
 -(NSUInteger)hash {
